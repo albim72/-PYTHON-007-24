@@ -43,3 +43,29 @@ for i in wznowienie(6,8):
     print("*"*40)
     print(type(i))
     print(f'zwrócowno wartośc {i}')
+
+#przykład 3
+
+def generator():
+    x=0
+    while True:
+        y = yield x
+        # z = yield x
+        if y is None:
+            x = x+1
+            # z = x - 7
+        else:
+            x=y*3
+            # z = z+5
+
+g = generator()
+
+print("_"*50)
+print(next(g))
+print(next(g))
+print(next(g))
+print(g.send(121))
+# print(g.send(y=888))
+print(next(g))
+print(next(g))
+print(g.send(73))
